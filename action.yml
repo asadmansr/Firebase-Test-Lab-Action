@@ -1,0 +1,15 @@
+name: 'Firebase Test Lab Action'
+description: 'A GitHub Action to test mobile applications (Android, iOS) using Firebase Test Lab.'
+author: 'Asad Mansoor'
+inputs:
+  arg-spec:
+    description: 'a YAML formatted file that includes arguments for gcloud firebase test run command.'
+    required: true
+runs:
+  using: 'docker'
+  image: 'Dockerfile'
+  args:
+    - ${{ inputs.arg-spec }}
+branding:
+  icon: 'check-square'  
+  color: 'blue'
