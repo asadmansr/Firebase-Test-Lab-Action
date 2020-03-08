@@ -80,6 +80,12 @@ Copy-paste the content of the JSON-formatted service account file in GitHub's se
 
 <br>
 
+## Contributing
+
+Are you facing an issue? Have some questions? Would like to implement a new feature? Learn more about our [contributing guidelines](CONTRIBUTING.md).
+
+<br>
+
 ## Licence
 
 The project is released under the [MIT License](LICENSE).
