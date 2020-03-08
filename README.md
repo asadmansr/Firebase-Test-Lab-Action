@@ -14,7 +14,7 @@ Inspired by the 2020 [GitHub Actions Hackathon.](https://github.community/t5/Eve
 
 ## Introduction
 
-Testing on mobile can be a challenge. With Firebase Test Lab, testing becomes much easier whether it's validating new code in a continuous integration (CI) pipeline or tracking down bugs on specific devices. This GitHub Action automates the setup of the gcloud command line tool and starts to test your applications within minutes.
+Testing mobile applications can be a challenge. With Firebase Test Lab, testing becomes much easier whether it's validating new changes on a continuous integration (CI) pipeline or tracking down bugs on specific devices. This GitHub Action automates the setup of the gcloud command line tool and provides an easy interface to start testing quickly.
 
 <br>
 
@@ -22,12 +22,13 @@ Testing on mobile can be a challenge. With Firebase Test Lab, testing becomes mu
 
 1. `Service Account`: A service account is a special kind of account with specific permissions to authenticate with the Cloud Platform when used on a virtual machine for continuous integration.
 
-2. `ARG SPEC File`: A YAML argument file that lists out all of the configurations for Firebase Test Lab. In this file, you can specify the APKs, filtering of tests, list of devices and output directory.
+2. `ARG SPEC File`: A YAML argument file that lists out all of the configurations for Firebase Test Lab. In this file, you can specify the test APK, filter the tests, select virtual or physical devices and indicate the type of test to perform.
+
 
 <br>
 
 ## Usage
-Simple usage:
+workflows/main.yml:
 ```
 name: Android CI
 on: [push]
@@ -47,7 +48,23 @@ jobs:
         env:
           SERVICE_ACCOUNT: ${{ secrets.SERVICE_ACCOUNT }}
 ```
-The following usage comes with additional instructions regarding the input and environment variables that can be found in the [Simple Usage Documentation]().
+
+tests.yml:
+```
+android-pixel-4:
+  type: instrumentation
+  app: app-debug.apk
+  test: app-debug-test.apk
+  device:
+    - model: flame
+      version: 29
+      locale: 'en'
+      orientation: portrait
+```
+
+<br>
+
+The following usage comes with additional instructions regarding the input and environment variables that can be found in the [Simple Usage Documentation](/docs/SIMPLE_USAGE.md).
 
 <br>
 
