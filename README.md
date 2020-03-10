@@ -1,5 +1,8 @@
 # Firebase Test Lab GitHub Action
 
+[![Release](https://img.shields.io/github/release/asadmansr/Firebase-Test-Lab-Action.svg)](https://github.com/asadmansr/Firebase-Test-Lab-Action/releases)
+[![Marketplace](https://img.shields.io/badge/GitHub-Marketplace-blue.svg)](https://github.com/marketplace/actions/firebase-test-lab-action)
+
 A GitHub Action to test mobile applications (Android, iOS) using Firebase Test Lab.
 
 <br>
@@ -65,6 +68,8 @@ android-pixel-4:
 <br>
 
 The following usage comes with additional instructions regarding the input and environment variables that can be found in the [Simple Usage Documentation](/docs/SIMPLE_USAGE.md).
+
+Currently, this GitHub Action only runs Android tests. Support for iOS coming soon.
 
 <br>
 
